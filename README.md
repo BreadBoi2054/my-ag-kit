@@ -9,7 +9,8 @@
 - **48 Specialized Skills**: Covers frontend design (anti-slop + Impeccable + Taste-Skill), backend architectures, security audits, database modeling, and Vietnamese official administrative documentation (bhc-vietnamese-docx).
 - **20 Specialist Agents**: Dedicated personas with strict operational boundaries (rontend-specialist, ackend-specialist, security-auditor, orchestrator, debugger, devops-engineer, etc.).
 - **Automated Lifecycle Hooks & Guardrails**: System-level PreToolUse guardrails (hooks.json, guard_agent_skill.py) that strictly enforce protocol integrity before code execution.
-- **Rigorous Governance Rules**: Core protocols, intelligent request routing, universal clean-code guidelines, and automated checklist validation.
+- **Master Architecture & Catalog**: Full documentation in ARCHITECTURE.md explaining tier-based governance and routing mechanics.
+- **Component Validation Schemas**: JSON schemas in schemas/ supporting automated checklist verification.
 - **Production-Tested Multi-Agent Coordination**: Built-in coordinator-mode and parallel-agents workflows.
 
 ---
@@ -20,7 +21,9 @@
 my-ag-kit/
 ├── agent/            # 20 Specialist agent definitions (.md)
 ├── hooks/            # Lifecycle hooks, schemas, and contract validators
+├── memory/           # Persistent cross-session memory templates (MEMORY.md)
 ├── rules/            # Core protocol, routing matrix, and universal rules
+├── schemas/          # JSON schemas for components, manifests, and memory
 ├── scripts/          # Automated checklist, guardrails, & verification scripts
 ├── skills/           # 48 Modular skills with SKILL.md specifications
 │   ├── frontend-design/      # Anti-slop UI design + Impeccable Design Director
@@ -29,6 +32,7 @@ my-ag-kit/
 │   ├── coordinator-mode/     # Multi-agent parallel coordination & synthesis
 │   └── ...
 ├── workflows/        # Predefined workflow pipelines
+├── ARCHITECTURE.md   # Complete system architecture and catalog
 ├── hooks.json        # PreInvocation and PreToolUse guardrail configuration
 └── README.md
 `
@@ -41,7 +45,7 @@ my-ag-kit/
 Copy or clone the contents into your global Gemini config directory:
 `ash
 # Windows PowerShell
-Copy-Item -Path "skills", "agent", "rules", "scripts", "hooks", "hooks.json" -Destination "C:\Users\doh52\.gemini\config\" -Recurse -Force
+Copy-Item -Path "skills", "agent", "rules", "scripts", "hooks", "schemas", "hooks.json" -Destination "C:\Users\doh52\.gemini\config\" -Recurse -Force
 `
 
 ### Option 2: Project Workspace Setup
@@ -49,7 +53,7 @@ Drop into your project root under the .agents/ folder:
 `ash
 # In your project root
 mkdir .agents
-Copy-Item -Path "skills", "agent", "rules", "hooks", "hooks.json" -Destination ".agents\" -Recurse -Force
+Copy-Item -Path "skills", "agent", "rules", "hooks", "schemas", "hooks.json" -Destination ".agents\" -Recurse -Force
 `
 
 ---

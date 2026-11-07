@@ -79,7 +79,7 @@ Python, TypeScript, JavaScript, Go, Rust, Java, C#, Ruby, Kotlin, Swift, PHP, C/
 ## Installation
 
 ### Prerequisites
-- Python 3.9+ (`python3 --version`)
+- Python 3.12+ (`python3 --version`)
 - pip or pipx installed
 - An MCP-compatible AI client (AG Kit, Claude Code, Cursor, Windsurf, Zed)
 - Git-tracked codebase (for incremental updates)

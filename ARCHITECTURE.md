@@ -9,7 +9,7 @@
 AG Kit is a modular system consisting of:
 
 - **20 Specialist Agents** - Role-based AI personas (1 major upgrade in 2026.5.13)
-- **44 Skills** - Domain-specific knowledge modules with conditional loading
+- **49 Skills** - Domain-specific knowledge modules with conditional loading
 - **13 Workflows** - Slash command procedures
 
 ---
@@ -20,7 +20,7 @@ AG Kit is a modular system consisting of:
 .agents/
 ├── ARCHITECTURE.md          # This file
 ├── agent/                  # 20 Specialist Agents
-├── skills/                  # 45 Skills (with conditional loading)
+├── skills/                  # 49 Skills (with conditional loading)
 ├── workflows/               # 13 Slash Commands
 ├── rules/                   # Global Rules
 ├── memory/                  # Persistent Memory (2026.5.13)
@@ -37,12 +37,12 @@ Specialist AI personas for different domains.
 | ------------------------ | -------------------------- | -------------------------------------------------------- |
 | `orchestrator`           | Multi-agent coordination   | parallel-agents, coordinator-mode, memory-system, context-compression, verify-changes |
 | `project-planner`        | Discovery, task planning   | brainstorming, plan-writing, architecture                |
-| `frontend-specialist`    | Web UI/UX                  | frontend-design, react-best-practices, tailwind-patterns |
+| `frontend-specialist`    | Web UI/UX                  | frontend-design, design-spec, frontend-architecture, nextjs-react-expert, tailwind-patterns |
 | `backend-specialist`     | API, business logic        | api-patterns, nodejs-best-practices, database-design     |
-| `database-architect`     | Schema, SQL                | database-design, prisma-expert                           |
+| `database-architect`     | Schema, SQL                | database-design                                          |
 | `mobile-developer`       | iOS, Android, RN           | mobile-design                                            |
 | `game-developer`         | Game logic, mechanics      | game-development                                         |
-| `devops-engineer`        | CI/CD, Docker              | deployment-procedures, docker-expert                     |
+| `devops-engineer`        | CI/CD, Docker              | deployment-procedures, server-management                 |
 | `security-auditor`       | Security compliance        | vulnerability-scanner, red-team-tactics                  |
 | `penetration-tester`     | Offensive security         | red-team-tactics                                         |
 | `test-engineer`          | Testing strategies         | testing-patterns, tdd-workflow, webapp-testing           |
@@ -53,12 +53,12 @@ Specialist AI personas for different domains.
 | `product-manager`        | Requirements, user stories | plan-writing, brainstorming                              |
 | `product-owner`          | Strategy, backlog, MVP     | plan-writing, brainstorming                              |
 | `qa-automation-engineer` | E2E testing, CI pipelines  | webapp-testing, testing-patterns                         |
-| `code-archaeologist`     | Legacy code, refactoring   | clean-code, code-review-checklist                        |
-| `explorer-agent`         | Codebase analysis          | -                                                        |
+| `code-archaeologist`     | Legacy code, refactoring   | clean-code, simplify-code, code-review-checklist         |
+| `explorer-agent`         | Codebase analysis          | clean-code, architecture, plan-writing, brainstorming, systematic-debugging |
 
 ---
 
-## 🧩 Skills (44)
+## 🧩 Skills (49)
 
 Modular knowledge domains that agents can load on-demand based on task context. Each skill has a `when_to_use` frontmatter field for conditional/intelligent loading.
 
@@ -66,38 +66,32 @@ Modular knowledge domains that agents can load on-demand based on task context. 
 
 | Skill                   | Description                                                           |
 | ----------------------- | --------------------------------------------------------------------- |
-| `react-best-practices`  | React & Next.js performance optimization (Vercel - 57 rules)          |
+| `nextjs-react-expert`   | React & Next.js performance optimization (Vercel - 57 rules)          |
 | `web-design-guidelines` | Web UI audit - 100+ rules for accessibility, UX, performance (Vercel) |
 | `tailwind-patterns`     | Tailwind CSS v4 utilities                                             |
-| `frontend-design`       | UI/UX patterns, design systems                                        |
+| `frontend-design`       | Anti-slop UI/UX patterns, Impeccable Design Director + 61 rules       |
+| `frontend-architecture` | Separation of concerns, state tiers, API services, React/Next & Vue   |
+| `design-spec`           | Authoring machine-readable `DESIGN.md` design-token specifications    |
 
-### Backend & API
+### Backend, API & Systems
 
-| Skill                   | Description                    |
-| ----------------------- | ------------------------------ |
-| `api-patterns`          | REST, GraphQL, tRPC            |
-| `nestjs-expert`         | NestJS modules, DI, decorators |
-| `nodejs-best-practices` | Node.js async, modules         |
-| `python-patterns`       | Python standards, FastAPI      |
+| Skill                   | Description                                  |
+| ----------------------- | -------------------------------------------- |
+| `api-patterns`          | REST, GraphQL, tRPC                          |
+| `nodejs-best-practices` | Node.js 24 LTS async, modules, architecture  |
+| `python-patterns`       | Python standards, FastAPI                    |
+| `rust-pro`              | Modern Rust (2024 edition), Tokio, axum      |
 
 ### Database
 
 | Skill             | Description                 |
 | ----------------- | --------------------------- |
 | `database-design` | Schema design, optimization |
-| `prisma-expert`   | Prisma ORM, migrations      |
-
-### TypeScript/JavaScript
-
-| Skill               | Description                         |
-| ------------------- | ----------------------------------- |
-| `typescript-expert` | Type-level programming, performance |
 
 ### Cloud & Infrastructure
 
 | Skill                   | Description               |
 | ----------------------- | ------------------------- |
-| `docker-expert`         | Containerization, Compose |
 | `deployment-procedures` | CI/CD, deploy workflows   |
 | `server-management`     | Infrastructure management |
 
@@ -157,6 +151,7 @@ Modular knowledge domains that agents can load on-demand based on task context. 
 
 | Skill                     | Description                                                 |
 | ------------------------- | ----------------------------------------------------------- |
+| `intelligent-routing`     | Automatic agent selection and task routing                  |
 | `coordinator-mode`        | Multi-agent orchestration with parallel workers & synthesis  |
 | `memory-system`           | Persistent cross-session memory with MEMORY.md index        |
 | `context-compression`     | Auto-compress context in long sessions                      |
@@ -166,18 +161,20 @@ Modular knowledge domains that agents can load on-demand based on task context. 
 | `skillify`                | Auto-create skills from repetitive workflows                |
 | `code-review-graph`       | Token-efficient code review via Tree-sitter AST + MCP       |
 
-### Other
+### Documents, Presentations & Other
 
-| Skill                     | Description               |
-| ------------------------- | ------------------------- |
-| `clean-code`              | Coding standards (Global) |
-| `behavioral-modes`        | Agent personas            |
-| `parallel-agents`         | Multi-agent patterns      |
-| `mcp-builder`             | Model Context Protocol    |
-| `documentation-templates` | Doc formats               |
-| `i18n-localization`       | Internationalization      |
-| `performance-profiling`   | Web Vitals, optimization  |
-| `systematic-debugging`    | Troubleshooting           |
+| Skill                     | Description                                                 |
+| ------------------------- | ----------------------------------------------------------- |
+| `clean-code`              | Coding standards (Global)                                   |
+| `behavioral-modes`        | Agent personas                                              |
+| `parallel-agents`         | Multi-agent patterns                                        |
+| `mcp-builder`             | Model Context Protocol                                      |
+| `documentation-templates` | Doc formats                                                 |
+| `vbhc-vietnamese-docx`    | Vietnamese administrative DOCX/PDF (NĐ 30/2020, Đảng, BQP)  |
+| `ppt-master`              | AI-driven editable PPTX presentation generation & templates |
+| `i18n-localization`       | Internationalization                                        |
+| `performance-profiling`   | Web Vitals, optimization                                    |
+| `systematic-debugging`    | Troubleshooting                                             |
 
 ---
 
@@ -290,7 +287,7 @@ For details, see [scripts/README.md](scripts/README.md)
 | Metric              | Value                             |
 | ------------------- | --------------------------------- |
 | **Total Agents**    | 20 (1 major upgrade in 2026.5.13) |
-| **Total Skills**    | 44 (+7 new in 2026.5.13)          |
+| **Total Skills**    | 49 (synced 2026.11)               |
 | **Total Workflows** | 13 (+2 new in 2026.5.13)          |
 | **Total Scripts**   | 2 (master) + 18 (skill-level)     |
 | **Coverage**        | ~95% web/mobile + orchestration   |
@@ -300,13 +297,13 @@ For details, see [scripts/README.md](scripts/README.md)
 
 ## 🔗 Quick Reference
 
-| Need     | Agent                 | Skills                                |
-| -------- | --------------------- | ------------------------------------- |
-| Web App  | `frontend-specialist` | react-best-practices, frontend-design |
-| API      | `backend-specialist`  | api-patterns, nodejs-best-practices   |
-| Mobile   | `mobile-developer`    | mobile-design                         |
-| Database | `database-architect`  | database-design, prisma-expert        |
-| Security | `security-auditor`    | vulnerability-scanner                 |
-| Testing  | `test-engineer`       | testing-patterns, webapp-testing      |
-| Debug    | `debugger`            | systematic-debugging                  |
-| Plan     | `project-planner`     | brainstorming, plan-writing           |
+| Need     | Agent                 | Skills                                  |
+| -------- | --------------------- | --------------------------------------- |
+| Web App  | `frontend-specialist` | nextjs-react-expert, frontend-design    |
+| API      | `backend-specialist`  | api-patterns, nodejs-best-practices     |
+| Mobile   | `mobile-developer`    | mobile-design                           |
+| Database | `database-architect`  | database-design                         |
+| Security | `security-auditor`    | vulnerability-scanner                   |
+| Testing  | `test-engineer`       | testing-patterns, webapp-testing        |
+| Debug    | `debugger`            | systematic-debugging                    |
+| Plan     | `project-planner`     | brainstorming, plan-writing             |

@@ -67,7 +67,7 @@ Replace a completed work phase with a summary:
 
 ✅ After (phase summary — ~200 tokens):
 ## Research Phase Complete
-- Project: Next.js 15 app with JWT auth
+- Project: Next.js 16 app with JWT auth
 - Auth files: 8 files in src/auth/, src/middleware/, src/api/
 - Token flow: login → create JWT → store in httpOnly cookie → validate in middleware
 - Bug location: src/auth/jwt.ts:45 — expiry check uses `<` instead of `<=`

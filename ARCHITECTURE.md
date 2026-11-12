@@ -9,7 +9,7 @@
 AG Kit is a modular system consisting of:
 
 - **20 Specialist Agents** - Role-based AI personas (1 major upgrade in 2026.5.13)
-- **49 Skills** - Domain-specific knowledge modules with conditional loading
+- **51 Skills** - Domain-specific knowledge modules with conditional loading
 - **13 Workflows** - Slash command procedures
 
 ---
@@ -20,7 +20,7 @@ AG Kit is a modular system consisting of:
 .agents/
 ├── ARCHITECTURE.md          # This file
 ├── agent/                  # 20 Specialist Agents
-├── skills/                  # 49 Skills (with conditional loading)
+├── skills/                  # 51 Skills (with conditional loading)
 ├── workflows/               # 13 Slash Commands
 ├── rules/                   # Global Rules
 ├── memory/                  # Persistent Memory (2026.5.13)
@@ -37,7 +37,7 @@ Specialist AI personas for different domains.
 | ------------------------ | -------------------------- | -------------------------------------------------------- |
 | `orchestrator`           | Multi-agent coordination   | parallel-agents, coordinator-mode, memory-system, context-compression, verify-changes |
 | `project-planner`        | Discovery, task planning   | brainstorming, plan-writing, architecture                |
-| `frontend-specialist`    | Web UI/UX                  | frontend-design, design-spec, frontend-architecture, nextjs-react-expert, tailwind-patterns |
+| `frontend-specialist`    | Web UI/UX                  | frontend-design, design-spec, frontend-architecture, nextjs-react-expert, tailwind-patterns, web-motion, animated-ui-registries |
 | `backend-specialist`     | API, business logic        | api-patterns, nodejs-best-practices, database-design     |
 | `database-architect`     | Schema, SQL                | database-design                                          |
 | `mobile-developer`       | iOS, Android, RN           | mobile-design                                            |
@@ -58,20 +58,22 @@ Specialist AI personas for different domains.
 
 ---
 
-## 🧩 Skills (49)
+## 🧩 Skills (51)
 
 Modular knowledge domains that agents can load on-demand based on task context. Each skill has a `when_to_use` frontmatter field for conditional/intelligent loading.
 
 ### Frontend & UI
 
-| Skill                   | Description                                                           |
-| ----------------------- | --------------------------------------------------------------------- |
-| `nextjs-react-expert`   | React & Next.js performance optimization (Vercel - 57 rules)          |
-| `web-design-guidelines` | Web UI audit - 100+ rules for accessibility, UX, performance (Vercel) |
-| `tailwind-patterns`     | Tailwind CSS v4 utilities                                             |
-| `frontend-design`       | Anti-slop UI/UX patterns, Impeccable Design Director + 61 rules       |
-| `frontend-architecture` | Separation of concerns, state tiers, API services, React/Next & Vue   |
-| `design-spec`           | Authoring machine-readable `DESIGN.md` design-token specifications    |
+| Skill                    | Description                                                                   |
+| ------------------------ | ----------------------------------------------------------------------------- |
+| `nextjs-react-expert`    | React & Next.js performance optimization (Vercel - 57 rules)                  |
+| `web-design-guidelines`  | Web UI audit - 100+ rules for accessibility, UX, performance (Vercel)         |
+| `tailwind-patterns`      | Tailwind CSS v4 utilities                                                     |
+| `frontend-design`        | Anti-slop UI/UX patterns, Impeccable Design Director + 61 rules               |
+| `frontend-architecture`  | Separation of concerns, state tiers, API services, React/Next & Vue           |
+| `design-spec`            | Authoring machine-readable `DESIGN.md` design-token specifications            |
+| `web-motion`             | Creative web animation: Motion, Lenis smooth scroll, Anime.js v4 & View Trans |
+| `animated-ui-registries` | Animated UI registries & presets: React Bits, Magic UI, Skiper UI, OriginKit  |
 
 ### Backend, API & Systems
 
@@ -157,7 +159,7 @@ Modular knowledge domains that agents can load on-demand based on task context. 
 | `context-compression`     | Auto-compress context in long sessions                      |
 | `verify-changes`          | Prove code works by running it, not just inspecting         |
 | `batch-operations`        | Multi-file pattern-based modifications                      |
-| `simplify-code`           | Reduce over-engineered complexity                           |
+| `simplify-code`           | Lazy Senior (Ponytail / YAGNI) minimalism & anti-bloat      |
 | `skillify`                | Auto-create skills from repetitive workflows                |
 | `code-review-graph`       | Token-efficient code review via Tree-sitter AST + MCP       |
 
@@ -287,7 +289,7 @@ For details, see [scripts/README.md](scripts/README.md)
 | Metric              | Value                             |
 | ------------------- | --------------------------------- |
 | **Total Agents**    | 20 (1 major upgrade in 2026.5.13) |
-| **Total Skills**    | 49 (synced 2026.11)               |
+| **Total Skills**    | 51 (synced 2026.11)               |
 | **Total Workflows** | 13 (+2 new in 2026.5.13)          |
 | **Total Scripts**   | 2 (master) + 18 (skill-level)     |
 | **Coverage**        | ~95% web/mobile + orchestration   |

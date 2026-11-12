@@ -1,22 +1,37 @@
 ---
 name: simplify-code
-description: Reduce complexity of over-engineered code. Identify unnecessary abstractions, remove dead code, flatten deep nesting, and simplify logic while preserving behavior.
-when_to_use: "When code is over-engineered, overly abstract, deeply nested, or more complex than needed. When user asks to 'simplify', 'clean up', 'reduce complexity', or 'make this simpler'. NOT for adding new features."
+description: Reduce complexity of over-engineered code and enforce "Lazy Senior Dev" (Ponytail / YAGNI) minimalism — prefer platform-native APIs and standard libraries before writing new abstractions or adding packages.
+when_to_use: "When code is over-engineered, overly abstract, or bloated, or when the user says 'simplify', 'clean up', 'reduce complexity', 'ponytail', 'be lazy', 'yagni', or 'simplest solution'."
 allowed-tools: Read, Write, Edit, Grep, Glob
-version: 1.0.0
+version: 1.1.0
 effort: medium
 ---
 
-# Simplify Code — Reduce Unnecessary Complexity
+# Simplify Code — Lazy Senior Minimalism & Anti-Bloat
 
-> The best code is the code you don't have to write. The second best is the code anyone can read.
+> The best code is the code you never wrote. The second best is plain, platform-native code anyone can read in 30 seconds.
 
 ## Core Principle
 
 ```
-Complexity is a cost. Every abstraction, every indirection, every clever pattern
-adds cognitive load. Simplify ruthlessly unless complexity serves a clear purpose.
+Complexity is a liability. Every wrapper, helper, config layer, and npm package
+is future maintenance debt. Solve 100% of the real problem with the smallest
+possible surface area.
 ```
+
+---
+
+## 0. The Ponytail Priority Ladder (Before Writing Any New Code)
+
+Adapted from `DietrichGebert/ponytail` — climb down this ladder strictly in order and stop at the highest rung that solves the problem completely:
+
+| Rung | First Choice | Examples |
+|---|---|---|
+| **1. YAGNI (Delete / Skip)** | Don't build speculative hooks, plugin systems, or config flags nobody asked for | Skip multi-provider adapters when only 1 provider exists |
+| **2. Platform / Runtime Native** | Use built-in HTML, CSS, Web APIs, or language standard library | `<dialog>`, `<details>`, native `<form>` validation, CSS `:has()` / `@starting-style` / scroll-driven animations, `fetch`, `Intl`, `URL`, `crypto.randomUUID()`, Node `fs/promises` & `node:test` |
+| **3. Existing Project Dependencies** | Reuse utilities already in `package.json` / `pyproject.toml` / `Cargo.toml` | Don't add `lodash` or `axios` when native JS or an already-installed helper covers it |
+| **4. Minimal Plain Code** | Write flat, direct functions inline where used (Rule of Three before abstracting) | 10 lines of clear TypeScript beats a 120-line generic factory |
+| **5. New Third-Party Package** | **Last resort only** — must justify bundle weight, maintenance, and lock-in | Complex crypto, battle-tested parsers, accessibility primitives, or heavy physics/WebGL engines |
 
 ---
 
@@ -130,3 +145,11 @@ npm run build   # Still compiles
 | Will need extension soon | Abstraction prepares for known growth |
 
 > **Ask first:** "This pattern seems over-engineered. Should I simplify it, or is there a reason for the abstraction?"
+
+---
+
+## Ponytail Closing Note (When Applying Aggressive Minimalism)
+
+When intentionally skipping speculative abstractions or dependencies, finish concisely with:
+- **Skipped intentionally**: Which unnecessary layers/packages were omitted (and which native/existing feature replaced them).
+- **Residual risk / When to revisit**: The concrete trigger condition (e.g., *"3+ callers"* or *"measured >10k rows"*) that would justify adding complexity later.

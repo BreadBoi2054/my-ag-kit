@@ -6,7 +6,7 @@
 
 ## 🌟 Highlights
 
-- **49 Specialized Skills**: Covers frontend design (anti-slop + Impeccable + Taste-Skill), backend architectures, security audits, database modeling, editable PPTX presentation generation (`ppt-master`), and Vietnamese official administrative documentation (`vbhc-vietnamese-docx`).
+- **51 Specialized Skills**: Covers frontend design (anti-slop + Impeccable + Taste-Skill), creative web motion (`web-motion`), animated component registries & presets (`animated-ui-registries`), backend architectures, security audits, database modeling, editable PPTX presentation generation (`ppt-master`), and Vietnamese official administrative documentation (`vbhc-vietnamese-docx`).
 - **20 Specialist Agents**: Dedicated personas with strict operational boundaries (`frontend-specialist`, `backend-specialist`, `security-auditor`, `orchestrator`, `debugger`, `devops-engineer`, etc.).
 - **Automated Lifecycle Hooks & Guardrails**: System-level PreToolUse guardrails (`hooks.json`, `guard_agent_skill.py`) that strictly enforce protocol integrity before code execution.
 - **Master Architecture & Catalog**: Full documentation in `ARCHITECTURE.md` explaining tier-based governance and routing mechanics.
@@ -25,12 +25,14 @@ my-ag-kit/
 ├── rules/            # Core protocol, routing matrix, and universal rules
 ├── schemas/          # JSON schemas for components, manifests, and memory
 ├── scripts/          # Automated checklist, guardrails, & verification scripts
-├── skills/           # 49 Modular skills with SKILL.md specifications
-│   ├── frontend-design/      # Anti-slop UI design + Impeccable Design Director
-│   ├── ppt-master/           # AI-driven editable PPTX decks, templates & slides
-│   ├── vbhc-vietnamese-docx/ # Nghị định 30/2020, HD 05, TT 68 administrative docs
-│   ├── clean-code/           # Pragmatic, concise, non-overengineered coding standards
-│   ├── coordinator-mode/     # Multi-agent parallel coordination & synthesis
+├── skills/           # 51 Modular skills with SKILL.md specifications
+│   ├── frontend-design/        # Anti-slop UI design + Impeccable Design Director
+│   ├── web-motion/             # Motion, Lenis smooth scroll, Anime.js v4 & View Transitions
+│   ├── animated-ui-registries/ # React Bits, Magic UI, Skiper UI, OriginKit & Shadcn Preset
+│   ├── ppt-master/             # AI-driven editable PPTX decks, templates & slides
+│   ├── vbhc-vietnamese-docx/   # Nghị định 30/2020, HD 05, TT 68 administrative docs
+│   ├── clean-code/             # Pragmatic, concise, non-overengineered coding standards
+│   ├── coordinator-mode/       # Multi-agent parallel coordination & synthesis
 │   └── ...
 ├── workflows/        # Predefined workflow pipelines
 ├── ARCHITECTURE.md   # Complete system architecture and catalog
